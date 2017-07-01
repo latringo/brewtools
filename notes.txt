@@ -1,0 +1,4 @@
+﻿use BrewTools-cli - ng serve
+
+Azure Cosmos DB
+https://docs.microsoft.com/en-us/azure/cosmos-db/documentdb-dotnet-application

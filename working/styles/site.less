@@ -1,0 +1,407 @@
+﻿/*@darkPrimaryColor: #FFA000;
+@primaryColor: #FFC107;
+@lightPrimaryColor: #FFECB3;
+@textPrimaryColor: #212121;
+@accentColor: #FFEB3B;
+@primaryTextColor: #212121;
+@secondaryTextColor: #757575;
+@dividerColor: #BDBDBD;*/
+
+@import "palette.less";
+@import "overrides.less";
+@import "effects.less";
+
+@transitionTime: .39s;
+
+body {
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+}
+
+h1 {
+  color: #369;
+  font-family: 'Overpass', sans-serif;
+  font-size: 250%;
+}
+
+main {
+  padding-top: 10px;
+}
+
+.navbar{
+  background-color: @darkPrimaryColor;
+}
+
+brew-tools .container-fluid{
+  padding-right:0;
+  padding-left:0;
+}
+/*header stuff*/
+
+/*menu*/
+.navbar .container {
+  position: relative;
+}
+
+.navbar i.material-icons {
+  font-size:40px;
+}
+
+.navbar button{
+  padding:5px;
+}
+
+.app-menu{
+  margin-right: 25px;
+}
+
+.dropdown-menu {
+  width: 150px;
+  background-color: white;
+  border: 1px solid @primaryColor;
+  border-radius: 2px;
+  padding-left: 10px;
+  position:absolute;  
+}
+
+.dropdown-menu.right{
+  left: -62px;
+}
+
+.dropdown-menu.left{
+  left: 10px;
+}
+
+.dropdown-menu ul{
+  padding:0;
+  margin:0;
+  /*position:absolute;
+  right: 5px;*/
+} 
+
+.dropdown-menu li {
+  list-style: none;
+  margin:5px;
+  cursor:pointer;
+}
+
+.dropdown-menu li a,
+.dropdown-menu li a:focus,
+.dropdown-menu li a:visited {
+  color: darken(@darkPrimaryColor, 25%);
+}
+
+.dropdown-menu li a:hover {
+  color: @darkPrimaryColor;
+  transition-duration: @transitionTime;
+}
+
+.current-route{
+  font-size:16px;
+  font-weight:300;
+  color: @lightPrimaryColor;
+}
+
+a.navbar-brand,
+a:focus.navbar-brand,
+a:visited.navbar-brand {
+  color: @secondaryTextColor;
+  font-size: 2.5vh;
+}
+
+a.navbar-brand:hover {
+  color: @primaryTextColor;
+  transition-duration: @transitionTime;
+}
+.time {
+  font-size: 18px;
+  color: @secondaryTextColor;
+}
+
+.current-time {
+  color: @lightPrimaryColor;
+}
+
+.time-row {
+  position: relative;
+  padding: 1px 24px 15px 24px;
+}
+
+.time-row-error{
+  color: @errorColor;
+}
+
+  .app-title {
+    display: inline-block;
+  }
+
+  .tool-name {
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  .md-checkbox-layout {
+    font-size: 16px;
+  }
+
+.form-group p{
+  font-size: 1rem;
+}
+
+.form-group input[type=checkbox],
+.form-group input[type=radio] {
+  display: none;
+}
+
+.form-group input[type=checkbox] + label:before,
+.form-group input[type=radio] + label:before {
+  font-family: FontAwesome;
+  font-size: 22px;
+  display: inline-block;
+}
+
+.form-group input[type=checkbox] + label:before {
+  content: "\f096";
+}
+
+.form-group input[type=radio] + label:before {
+  content: "\f1db";
+}
+
+.form-group input[type=checkbox] + label:before,
+.form-group input[type=radio] + label:before {
+  letter-spacing: 5px;
+}
+
+.form-group input[type=checkbox]:checked + label:before {
+  content: "\f046";
+}
+
+.form-group input[type=radio]:checked + label:before {
+  content: "\f05d";
+}
+
+.form-group input[type=checkbox]:checked + label:before,
+.form-group input[type=radio]:checked + label:before {
+  letter-spacing: 5px;
+}
+
+input#phrase{
+  font-style:italic;
+}
+  #total-time {
+    margin-top: 15px;
+  }
+
+.brew-timer {
+  padding: 15px 40px;
+  margin: 5px 20px 20px 20px;
+  position: relative;
+  border: 1px solid #a5a4a4;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: @transitionTime;
+}
+
+.brew-timer:hover {
+  .boxshadow;
+} 
+
+.brew-timer .time-row-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+  .brew-timer:hover{
+    .boxshadow;
+    transition: @transitionTime;
+  }
+
+.time-to-fire span{
+  font-weight: 500;
+}
+
+.time-row-button .btn{
+  padding:2px 5px;
+  min-width:0;
+}
+
+.time-row-button .dropdown-menu{
+  position:absolute;
+  left: -94px;
+  top:29px;
+}
+
+.speaker-icon{
+  margin-top: 10px;
+  margin-right: 15px;
+  color: @primaryColor;
+
+}
+
+.brew-timer .row {
+  margin-top: 10px;
+}
+
+  .brew-timer h4 {
+    margin-bottom: 20px;
+    margin-top: -5px;
+  }
+
+.brew-timer.completed {
+  height: 68px;
+  transition: @transitionTime;
+}
+
+.brew-timer.completed .time-row-button button {
+  color: @dividerColor;
+  border: 1px solid @dividerColor;  
+}
+
+.brew-timer.completed .time-row-button button i{
+  color: @dividerColor;
+}
+
+.brew-timer.completed .time-row-button .dropdown-menu{
+  display:none;
+}
+
+.brew-timer.completed .form-active {
+  display: none;
+  transition: @transitionTime;
+}
+
+.brew-timer .form-completed{
+  display:none;
+}
+
+.brew-timer.completed .form-completed{
+  display:block;
+  transition: @transitionTime;
+}
+  .top-padding {
+    padding-top: 20px
+  }
+
+  .editable {
+    font-size: 16px;
+    text-align: left;
+  }
+
+ .timer-row-hide{
+   display:none;
+ }
+
+.btn-start-timers:disabled {
+  background-color: @dividerColor;
+  border: 1px solid @secondaryTextColor;
+  color: @secondaryTextColor;
+}
+
+/* status */
+.timer-status {
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: -18px;
+}
+
+.timer-status .row{
+  margin-top: 15px;
+}
+
+.timer-status span{
+  font-weight:700;
+}
+
+.timer-status .label {
+  width: 150px;
+  text-align: right;
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+timer-row .timer-status{
+  margin-top: 0;
+}
+
+.step-current {
+  color: @primaryTextColor;
+}
+
+.step-next {
+  color: @secondaryTextColor;
+}
+
+.status-normal {
+  color: @primaryTextColor;
+}
+
+.active-start{
+  border:1px solid red;
+}
+
+.status-five-minutes {
+  color: @fiveMinutes;
+}
+
+.active-five {
+  border:1px solid @lightPrimaryColor;
+}
+
+.status-one-minute {
+  color: @oneMinute;
+}
+
+.active-one{
+  border:1px solid @primaryColor;
+}
+.status-complete {
+  color: @darkGreen;
+}
+
+.status-error{
+  color: @errorColor;
+}
+
+.time-to-fire{
+  padding-top: 6px;
+}
+
+.separator{
+  border-bottom:2px solid @dividerColor;
+  margin:0 5px 0 0;
+  height: 5px;
+}
+h4 .h4 {
+  font-size: 1.2rem;
+}
+
+.fabs{
+  position:absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  display:none;
+}
+
+.fabs button:first-child{
+  margin-bottom: 10px;
+}
+
+.app-loader{
+  height: 150px;
+  min-height: 150px;
+  background: url(/src/app/content/images/gears.svg) center center no-repeat scroll;
+  margin-top: 25%;
+}
+
+.delete-row{
+  position:absolute;
+  right: 10px;
+}
+
+.action{
+  cursor: pointer;
+}

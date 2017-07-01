@@ -1,0 +1,56 @@
+﻿<div class="brew-timer zoomInDown animated {{activeClass}} {{actionState}}" [ngClass]="{'card': row.currentTimer}" id="{{row.id}}" (timerCompleted)="onTimerCompleted($event)">
+  <div ngbDropdown class="d-inline-block time-row-button">
+    <button class="btn btn-outline-secondary" id="dropdownMenu1" ngbDropdownToggle>
+      <i class="material-icons">delete_sweep</i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <ul>
+        <li>
+          <a (click)="deleteRow(this)">Delete this timer?</a>
+        </li>
+      </ul>
+    </div>
+  </div>  
+  <div class="form-active">
+    <form [formGroup]="timeRowForm" novalidate>
+      <div class="row">
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">            
+            <label class="col-form-label" for="name_{{row.baseId}}">Additive name</label><br />
+            <input [(ngModel)]="row.name" type="text" id="name_{{row.baseId}}" class="form-control" formControlName="nameInput" placeholder="Additive name" />
+            <small id="additiveHelp" class="form-text {{nameStatusStyle}}">{{nameInputHelp}}</small>
+            <div *ngIf="formErrors.nameInput" class="time-row-error">{{formErrors.nameInput}}</div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">            
+            <label class="col-form-label" for="additive_{{row.id}}">Timer length</label>
+            <input [(ngModel)]="row.timerLength" type="text" id="additive_{{row.id}}" class="form-control"
+                   [value]="row.timerLength" formControlName="timerLengthInput" name="timerLength" />
+            <small id="timerLengthHelp" class="form-text {{timerStatusStyle}}">{{timerLengthHelp}}</small>
+            <div *ngIf="formErrors.timerLengthInput" class="time-row-error">{{formErrors.timerLengthInput}}</div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12 offset-sm-1 timer-status">
+          <div class="time-to-fire {{row.timerCss}}">
+            Time until adding: <span>{{row.timeToFire}}</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="form-completed">
+    <div class="row">
+      <div class="col">Additive: {{row.name}}</div>
+      <div class="col">Time: {{row.timerLength}} minutes</div>
+      <div class="col">Completed at: {{row.timeCompleted}}</div>
+    </div>
+  </div>
+  <div class="row" style="display:none;">
+    <div class="col">
+      <p>Form value: {{timeRowForm.value | json}}</p>
+      <p>Form status: {{timeRowForm.status | json}}</p>
+      <p>Form valid: {{timeRowForm.valid | json}}</p>
+    </div>
+  </div>
+  </div>

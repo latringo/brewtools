@@ -1,0 +1,86 @@
+﻿@import "palette.less";
+@transitionTime: .39s;
+
+.btn-outline-secondary {
+  color: @primaryColor !important;
+  border: 1px solid @primaryColor;
+}
+
+.btn-outline-secondary,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus {
+  color: @primaryColor !important;
+  border: 1px solid white;
+  transition-duration: @transitionTime;
+}
+
+.btn-primary {
+  background-color: @darkPrimaryColor;
+  color: @textPrimaryColor;
+  border: 1px solid @primaryColor;
+}
+
+.btn-primary:hover {
+  background-color: @primaryColor;
+  color: @secondaryTextColor;
+  transition-duration: @transitionTime;
+}
+
+.navbar .row {
+  width:100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 25px;
+}
+
+a.navbar-brand {
+  padding-left:0;
+  font-weight:300;
+  font-size:24px;
+  color:@lightPrimaryColor!important;
+}
+
+a.navbar-brand:hover {
+  color: @primaryTextColor!important;
+  transition-duration: @transitionTime;
+}
+
+.form-control:focus{
+  border-bottom-color:@darkPrimaryColor;
+}
+
+.form-control.ng-invalid,
+.form-control.ng-invalid:focus {
+  border-bottom-color: @errorColor;
+}
+
+.form-group:not(.floating-label) label:not(.form-check-label) {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.text-muted {
+  color: rgba(0,0,0,.58) !important;
+}
+
+.small, small {
+  font-size: 85%;
+  font-weight: 300;
+}
+
+.col-form-label {
+  color: @primaryTextColor
+}
+
+.material-icons{
+  color: @primaryColor;
+}
+
+.form-group{
+  margin-bottom: 1rem;
+}
+
+.d-inline-block .btn{
+  height: 50px;
+}

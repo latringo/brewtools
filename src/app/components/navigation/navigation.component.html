@@ -1,0 +1,35 @@
+﻿<nav class="navbar navbar-toggleable-md navbar-light sticky-top">
+  <div class="row">
+    <div class="col-3">
+      <a class="navbar-brand align-self-start" href="#">
+        <strong>Middle Fork Brew Tools</strong>        
+      </a>
+      <div class="current-route">{{currentRouteDisplay}}</div>
+    </div>
+    <div class="col-5">
+      <div class="row">
+        <div class="col time current-time text-center hidden-xs-down">{{currentTime}}</div>
+      </div>
+      <div class="row">
+        <div *ngIf="this.brewStartTime" class="col time brew-start-time">Start time: {{this.brewStartTime}}</div>
+        <div *ngIf="this.brewEndTime" class="col time brew-end-time">Finish time: {{this.brewEndTime}}</div>
+      </div>      
+    </div>
+    <div class="col-4 text-right">
+      <div ngbDropdown class="d-inline-block navbar-toggler-right">
+        <button class="btn btn-outline-secondary" id="dropdownMenu1" ngbDropdownToggle>
+          <i class="material-icons">menu</i>
+        </button>
+        <div class="dropdown-menu right" aria-labelledby="dropdownMenu1">
+          <ul>
+            <li class="waves-effect waves-light" *ngFor="let item of items">
+              <a [routerLink]="item.routerLink" [routerLinkActive]="item.routerLinkActive" (click)="select(item.text)">
+                {{item.text}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
